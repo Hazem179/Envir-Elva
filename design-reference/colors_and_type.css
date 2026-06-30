@@ -1,0 +1,185 @@
+/* ============================================================
+   E-VALUE DESIGN SYSTEM — Colors & Type
+   Eco-education platform for children (mascots: Envir & Elva)
+   ------------------------------------------------------------
+   FONT NOTE: No brand font files were provided. We use
+   Fredoka (rounded, friendly display) + Nunito (warm, highly
+   legible body) from Google Fonts as a SUBSTITUTION. Swap the
+   @import + --font-* vars if/when real brand fonts arrive.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  /* ---- Brand fonts ---- */
+  --font-display: 'Fredoka', 'Trebuchet MS', sans-serif;   /* headings, mascot labels, CTAs */
+  --font-body: 'Nunito', system-ui, -apple-system, sans-serif; /* body, UI, captions */
+
+  /* ============ COLOR — RAW PALETTE ============ */
+
+  /* Backgrounds & surfaces */
+  --bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-2: #F8F8F8;
+  --surface-sky: #F2FAFB;     /* faint cyan tint surface */
+  --surface-leaf: #F3FBEE;    /* faint green tint surface */
+
+  /* Text */
+  --fg1: #0B1014;             /* primary text */
+  --fg2: #576A78;             /* secondary text */
+  --fg3: #8A99A5;             /* muted / disabled */
+
+  /* Primary brand greens (deep, nature) */
+  --primary: #1A2B25;         /* darkest — primary buttons / nav */
+  --primary-deep: #064F3C;    /* heading green */
+  --primary-leaf: #0F4F3B;    /* H1 green on light */
+
+  /* Green — action & success (Elva / earth) */
+  --green: #3AB308;
+  --green-dark: #2F9406;
+  --green-tint: rgba(58, 179, 8, 0.18);
+
+  /* Cyan / teal — accent & water (Envir) */
+  --cyan: #03AABD;
+  --cyan-dark: #028798;
+  --cyan-tint: rgba(3, 170, 189, 0.14);
+
+  /* Red / orange — destructive & warm accent */
+  --destructive: #A54438;
+  --destructive-tint: rgba(165, 68, 56, 0.18);
+  --red-accent: #C1473B;
+
+  /* Warm / wood accents (bark, medallion) */
+  --wood: #7A4A26;
+  --gold: #FDB813;            /* medallion / 1st place */
+  --orange: #D97706;          /* warning / chart */
+
+  /* Neutral & lines */
+  --border: #EBF0F3;
+  --input-bg: #E8EEF5;
+  --ring: #B4D0E0;
+
+  /* ============ COLOR — SEMANTIC ============ */
+  --color-link: var(--cyan);
+  --color-success: var(--green);
+  --color-warning: var(--orange);
+  --color-info: var(--cyan);
+  --color-error: var(--destructive);
+  --focus-ring: var(--ring);
+
+  /* ============ CHART ============ */
+  --chart-1: #D97706;
+  --chart-2: #06B6D4;
+  --chart-3: #3B82F6;
+  --chart-4: #F59E0B;
+  --chart-5: #8FD14F;
+
+  /* ============ RANK ============ */
+  --rank-gold: #FDB813;
+  --rank-silver: #C0C6D4;
+  --rank-bronze: #D47B1F;
+
+  /* ============ GRADIENTS ============ */
+  --grad-page: linear-gradient(180deg, rgba(48,203,225,0.18) 0%, rgba(58,179,8,0.12) 55%, rgba(165,68,56,0.08) 100%);
+  --grad-hero: linear-gradient(135deg, rgba(48,203,225,0.28), rgba(58,179,8,0.18));
+  --grad-progress: linear-gradient(135deg, #03AABD, #3AB308);
+  --grad-brand: linear-gradient(120deg, #03AABD 0%, #3AB308 100%);
+
+  /* ============ RADII ============ */
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+  --r-pill: 999px;
+
+  /* ============ SHADOWS / ELEVATION ============ */
+  --shadow-sm: 0 1px 2px rgba(11,16,20,0.06);
+  --shadow-md: 0 6px 18px rgba(11,16,20,0.08);
+  --shadow-lg: 0 16px 40px rgba(11,16,20,0.12);
+  --shadow-green: 0 8px 20px rgba(58,179,8,0.28);
+  --shadow-cyan: 0 8px 20px rgba(3,170,189,0.26);
+
+  /* ============ SPACING (4px base) ============ */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+
+  /* ============ TYPE SCALE ============ */
+  --text-xs: 0.75rem;   /* 12 */
+  --text-sm: 0.875rem;  /* 14 */
+  --text-base: 1rem;    /* 16 */
+  --text-lg: 1.125rem;  /* 18 */
+  --text-xl: 1.375rem;  /* 22 */
+  --text-2xl: 1.75rem;  /* 28 */
+  --text-3xl: 2.25rem;  /* 36 */
+  --text-4xl: 3rem;     /* 48 */
+  --text-5xl: 3.75rem;  /* 60 */
+}
+
+/* ============================================================
+   SEMANTIC ELEMENT STYLES (opt-in via .ev-prose or direct use)
+   ============================================================ */
+
+.ev-h1, .ev-prose h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-5xl);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--primary-leaf);
+}
+.ev-h2, .ev-prose h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-3xl);
+  line-height: 1.12;
+  color: var(--primary-deep);
+}
+.ev-h3, .ev-prose h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-2xl);
+  line-height: 1.2;
+  color: var(--primary-deep);
+}
+.ev-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.ev-lead {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-xl);
+  line-height: 1.5;
+  color: var(--fg2);
+}
+.ev-body, .ev-prose p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--fg1);
+}
+.ev-small {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--fg2);
+}
+.ev-caption {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--fg3);
+}
+.ev-prose a { color: var(--color-link); text-decoration: none; }
+.ev-prose a:hover { text-decoration: underline; }

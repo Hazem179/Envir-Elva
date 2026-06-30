@@ -1,0 +1,243 @@
+/* Brand tokens (from globals.css):
+   --brand-green, --brand-green-light, --brand-green-dark
+   --brand-teal,  --brand-teal-light,  --brand-teal-dark
+   --brand-rust,  --brand-rust-light,  --brand-rust-dark
+*/
+
+.dashboard-container {
+  min-height: 100svh;
+  background: #f3fbee;
+}
+
+.dashboard-content {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 20px 16px 48px;
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .dashboard-content {
+    padding: 28px 24px 64px;
+    gap: 24px;
+  }
+}
+
+/* Character hero - large, friendly, focus on avatar */
+.character-hero {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px -18px rgba(7, 67, 58, 0.18);
+  padding: 18px;
+}
+
+@media (min-width: 860px) {
+  .character-hero {
+    padding: 24px;
+  }
+}
+
+.character-hero-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (min-width: 880px) {
+  .character-hero-content {
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+  }
+}
+
+.character-avatar-wrapper {
+  display: grid;
+  place-items: center;
+}
+
+.character-avatar {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(3, 170, 189, 0.1);
+  display: grid;
+  place-items: center;
+}
+
+.character-avatar img {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+}
+
+.character-speech-bubble {
+  background: rgba(3, 170, 189, 0.10);
+  border: 2px solid rgba(3, 170, 189, 0.25);
+  border-radius: 18px;
+  padding: 14px 16px;
+}
+
+.character-speech-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #0f4f3b;
+}
+
+.character-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.stat-badge {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  border: 2px solid currentColor;
+  background: white;
+  font-weight: 800;
+}
+
+.stat-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.stat-value {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.stat-badge--green {
+  color: var(--brand-green);
+}
+
+.stat-badge--teal {
+  color: var(--brand-teal);
+}
+
+.stat-badge--rust {
+  color: var(--brand-rust);
+}
+
+.stat-badge--salmon {
+  color: var(--brand-rust-light);
+}
+
+/* Adventures grid - simple tiles, big tap targets */
+.adventures-section {
+  display: grid;
+  gap: 14px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 900;
+  color: #0f4f3b;
+}
+
+.adventures-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.adventure-card {
+  background: white;
+  border-radius: 22px;
+  box-shadow: 0 14px 30px -18px rgba(12, 38, 29, 0.28);
+  padding: 16px;
+}
+
+.adventure-icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  margin-bottom: 8px;
+}
+
+.adventure-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.adventure-title {
+  font-size: 18px;
+  font-weight: 900;
+  color: #0f4f3b;
+}
+
+.adventure-tagline {
+  font-weight: 700;
+  color: rgba(15, 79, 59, .70);
+  font-size: 14px;
+}
+
+.adventure-description {
+  color: rgba(15, 79, 59, .75);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.adventure-progress {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  color: rgba(15, 79, 59, .72);
+  font-size: 14px;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background: rgba(15, 79, 59, .12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.adventure-start-btn {
+  margin-top: 12px;
+  border: none;
+  color: white;
+  font-weight: 800;
+  letter-spacing: .01em;
+  padding: 12px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 14px 28px -16px rgba(3, 170, 189, 0.35);
+}
+
+/* Utilities */
+.nav-label {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-label {
+    display: inline;
+  }
+}

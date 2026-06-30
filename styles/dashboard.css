@@ -1,0 +1,624 @@
+/* ========================================
+   DASHBOARD - WORLD-CLASS KID-FRIENDLY DESIGN
+   ======================================== */
+
+:root {
+  --brand-green: #3ab308;
+  --brand-teal: #03aabd;
+  --brand-rust: #a54438;
+  --brand-lime: #8fe36a;
+  --brand-aqua: #30cbe1;
+  --brand-blush: #e66b54;
+
+  --bg-gradient: #f3fbee;
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-character: 0 12px 32px rgba(58, 179, 8, 0.2);
+
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  --spacing-sm: 12px;
+  --spacing-md: 24px;
+  --spacing-lg: 48px;
+}
+
+/* ===== DASHBOARD LAYOUT ===== */
+.dashboard-container {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  padding-bottom: 80px;
+}
+
+.dashboard-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ===== CHARACTER HERO SECTION ===== */
+.character-hero {
+  position: relative;
+  padding: 32px 24px;
+  margin: 24px 0 32px;
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.character-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--brand-green);
+}
+
+.character-hero-content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.character-avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.character-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--brand-green);
+  padding: 8px;
+  box-shadow: var(--shadow-character);
+  transition: transform 0.3s ease;
+}
+
+.character-avatar:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.character-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.character-speech-bubble {
+  position: relative;
+  background: #f0fdf4;
+  border-radius: 20px;
+  padding: 16px 24px;
+  max-width: 400px;
+  border: 3px solid var(--brand-green);
+}
+
+.character-speech-bubble::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid var(--brand-green);
+}
+
+.character-speech-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #166534;
+  line-height: 1.4;
+}
+
+.character-stats {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-badge {
+  background: white;
+  border: 3px solid var(--brand-teal);
+  border-radius: var(--radius-lg);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--brand-teal);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease;
+}
+
+/* Color modifiers for stat badges */
+.stat-badge--green {
+  color: var(--brand-green);
+  border-color: var(--brand-green);
+}
+
+.stat-badge--teal {
+  color: var(--brand-teal);
+  border-color: var(--brand-teal);
+}
+
+.stat-badge--rust {
+  color: var(--brand-rust);
+  border-color: var(--brand-rust);
+}
+
+.stat-badge--salmon {
+  color: var(--brand-blush);
+  border-color: var(--brand-blush);
+}
+
+.stat-badge:hover {
+  transform: translateY(-4px);
+}
+
+.stat-icon {
+  font-size: 24px;
+}
+
+.stat-value {
+  font-size: 24px;
+  color: #0e7490;
+}
+
+/* ===== ADVENTURE CARDS (SIMPLE GRID) ===== */
+.adventures-section {
+  margin: 40px 0;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #166534;
+  margin-bottom: 24px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.adventures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.adventure-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 4px solid transparent;
+}
+
+.adventure-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: currentColor;
+  opacity: 0.3;
+}
+
+.adventure-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-hover);
+  border-color: currentColor;
+}
+
+.adventure-card.active {
+  border-color: currentColor;
+  box-shadow: 0 0 0 4px rgba(58, 179, 8, 0.2);
+}
+
+.adventure-icon-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+
+}
+
+.adventure-card:hover .adventure-icon-circle {
+  opacity: 0.25;
+}
+
+.adventure-icon {
+  color: currentColor;
+  width: 36px;
+  height: 36px;
+  opacity: 1;
+}
+
+.adventure-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.adventure-tagline {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.adventure-description {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.adventure-progress {
+  margin: 20px 0;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.progress-bar-container {
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: currentColor;
+  border-radius: var(--radius-full);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Additional shimmer for inline styles */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.adventure-start-btn {
+  width: 100%;
+  padding: 16px 24px;
+  background: currentColor;
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.adventure-start-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.adventure-start-btn:active {
+  transform: scale(0.98);
+}
+
+/* Utility: responsive nav label to avoid SSR window usage */
+.nav-label {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-label {
+    display: inline;
+  }
+}
+
+/* ===== DAILY QUESTS ===== */
+.daily-quests-section {
+  margin: 48px 0;
+}
+
+.quests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.quest-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+  border-left: 6px solid var(--brand-teal);
+  transition: transform 0.2s ease;
+}
+
+.quest-card:hover {
+  transform: translateX(8px);
+}
+
+.quest-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.quest-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--brand-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.quest-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.quest-description {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.quest-progress-wrapper {
+  margin-top: 12px;
+}
+
+/* ===== BADGES SECTION ===== */
+.badges-section {
+  margin: 48px 0;
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  box-shadow: var(--shadow-soft);
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  background: #f8fafc;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.badge-item:hover {
+  transform: scale(1.1);
+}
+
+.badge-item.locked {
+  opacity: 0.4;
+  filter: grayscale(100%);
+}
+
+.badge-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.badge-icon {
+  color: currentColor;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+}
+
+.badge-item.unlocked .badge-icon-wrapper {
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.badge-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  text-align: center;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .character-hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .character-speech-bubble::before {
+    left: 50%;
+    top: -12px;
+    transform: translateX(-50%) rotate(90deg);
+  }
+
+  .adventures-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .character-stats {
+    justify-content: center;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-content {
+    padding: 0 12px;
+  }
+
+  .character-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .character-speech-text {
+    font-size: 16px;
+  }
+
+  .adventure-title {
+    font-size: 20px;
+  }
+
+  .badges-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+/* ===== PLAYFUL ANIMATIONS ===== */
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ===== LOADING STATES ===== */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f1f5f9 0%, #e2e8f0 50%, #f1f5f9 100%);
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+  border-radius: var(--radius-lg);
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
