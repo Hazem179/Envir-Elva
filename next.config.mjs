@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Emit a fully static ./out folder (no SSR/server features in this app),
+  // ideal for Cloudflare Pages / any CDN.
+  output: 'export',
   eslint: {
     ignoreDuringBuilds: true,
   },
