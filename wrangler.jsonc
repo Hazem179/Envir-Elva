@@ -1,0 +1,10 @@
+{
+  // Deploy the Next.js STATIC EXPORT (./out) as Cloudflare static assets.
+  // No Worker script, no SSR, no OpenNext — this app has no server features.
+  "name": "envir-elva",
+  "compatibility_date": "2026-06-30",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  }
+}
